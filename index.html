@@ -11,7 +11,8 @@
   <article id="text-box"></article>
   <button onclick="addNewElement()">Click Me</button><br>
   <input id="input">
-  <button onclick="addNewElement()">Add New Word</button>
+  <button onclick="newWordButton()">Add New Word</button>
+  <article id="text-box-2"></article>
 
 
   <script>
@@ -44,11 +45,17 @@
       return console.log(clicks)
     }
 
-    const newWord = ""
-    let newWordButton = 0
-    const Words = (newWord) => {
-      const createWord = document.getElementById("input").innerHTML = newWord
-      Words.appenddchild()
+    const newWordButton = () => {
+      console.log("test")
+      const word  = document.getElementById("input").value
+      console.log(word)
+      if (word) {
+        let textbox = document.getElementById("text-box-2")
+        const p = document.createElement("p")
+        p.appendChild(document.createTextNode(word))
+        console.log(p)
+        textbox.appendChild(p)
+      }
     }
   </script>
 </body>
